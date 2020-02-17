@@ -9,12 +9,13 @@
 import Foundation
 
 struct Images: Codable {
-    let original: OriginalImages
+    let original: OriginalImages?
+    let preview: Preview?
 
     private enum CodingKeys: String, CodingKey {
         case original = "original"
+        case preview = "preview_gif"
     }
-
 }
 
 struct OriginalImages: Codable {
@@ -42,4 +43,11 @@ struct OriginalImages: Codable {
         case webpSize = "webp_size"
         case mp4Size = "mp4_size"
     }
+}
+
+struct Preview: Codable {
+    let url: String
+    let height: String
+    let width: String
+    let size: String
 }

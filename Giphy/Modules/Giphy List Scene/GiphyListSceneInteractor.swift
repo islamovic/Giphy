@@ -6,6 +6,7 @@
 //  Copyright © 2020 App Lineup. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class GiphyListSceneInteractor: GiphyListSceneBusinessLogic, GiphyListSceneDataStore {
@@ -14,11 +15,14 @@ class GiphyListSceneInteractor: GiphyListSceneBusinessLogic, GiphyListSceneDataS
 
     var treendingPosts: [Gif]
 
+    var cachedGifs: [String : UIImage?]
+
     let worker = GiphyListSceneWorker()
 
     required init(presenter: GiphyListScenePresentingLogic) {
         self.presenter = presenter
         treendingPosts = []
+        cachedGifs = [:]
     }
 }
 

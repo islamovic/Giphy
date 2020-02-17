@@ -8,23 +8,6 @@
 
 import Foundation
 
-/**public class SpeciesNetworkService: NetworkService, SpeciesUseCases {
-
-    public func listSpecies(_ input: Species.List.Input,
-                            completion: @escaping (Result<Species.List.Output, NetworkError>) -> Void) {
-        let request = SpeciesRouter.listSpecies(input)
-        client.request(request, completion: completion)
-    }
-
-    public func speciesDetails(_ input: Species.Details.Input,
-                               completion: @escaping (Result<Species.Details.Output, NetworkError>) -> Void) {
-        let request = SpeciesRouter.speciesDetails(input)
-        client.request(request, completion: completion)
-    }
-}
-*/
-
-
 public class GifNetworkService {
 
     public func listTrendingPosts(completion: @escaping(Data?, Error?) -> Void) {

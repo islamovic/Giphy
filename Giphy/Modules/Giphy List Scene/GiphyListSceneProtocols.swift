@@ -35,6 +35,7 @@ protocol GiphyListSceneRoutingLogic: class {
 // MARK: - Data Store
 protocol GiphyListSceneDataStore: class {
     var treendingPosts: [Gif] { get set }
+    var cachedGifs: [String: UIImage?] { get set }
 }
 
 // MARK: - Scene Model

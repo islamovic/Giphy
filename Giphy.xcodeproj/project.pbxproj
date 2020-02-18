@@ -45,7 +45,19 @@
 		A609BEB223FADAF00090B408 /* GiphyDetailsScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB123FADAF00090B408 /* GiphyDetailsScenePresenter.swift */; };
 		A609BEB623FADB050090B408 /* GiphyDetailsSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB523FADB050090B408 /* GiphyDetailsSceneConfigurator.swift */; };
 		A609BEB823FC15920090B408 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB723FC15920090B408 /* Page.swift */; };
+		A609BEBA23FC677B0090B408 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB923FC677B0090B408 /* UIViewController+Alert.swift */; };
+		A609BEC223FC6BE90090B408 /* GiphyListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEC123FC6BE90090B408 /* GiphyListTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A609BEC423FC6BE90090B408 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A609BE4923F768160090B408 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A609BE5023F768160090B408;
+			remoteInfo = Giphy;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A609BE5123F768160090B408 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,10 +100,21 @@
 		A609BEB123FADAF00090B408 /* GiphyDetailsScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsScenePresenter.swift; sourceTree = "<group>"; };
 		A609BEB523FADB050090B408 /* GiphyDetailsSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsSceneConfigurator.swift; sourceTree = "<group>"; };
 		A609BEB723FC15920090B408 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		A609BEB923FC677B0090B408 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		A609BEBF23FC6BE90090B408 /* GiphyListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiphyListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A609BEC123FC6BE90090B408 /* GiphyListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyListTests.swift; sourceTree = "<group>"; };
+		A609BEC323FC6BE90090B408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A609BE4E23F768160090B408 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A609BEBC23FC6BE90090B408 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -105,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A609BE5323F768160090B408 /* Giphy */,
+				A609BEC023FC6BE90090B408 /* GiphyListTests */,
 				A609BE5223F768160090B408 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				A609BE5123F768160090B408 /* Giphy.app */,
+				A609BEBF23FC6BE90090B408 /* GiphyListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,6 +283,7 @@
 				A609BEA123F9CE1A0090B408 /* UICollectionView+Utils.swift */,
 				A609BEA323F9E45D0090B408 /* UIImage+Gif.swift */,
 				A609BEA523F9E47C0090B408 /* UIImageView+Gif.swift */,
+				A609BEB923FC677B0090B408 /* UIViewController+Alert.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -283,6 +309,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A609BEC023FC6BE90090B408 /* GiphyListTests */ = {
+			isa = PBXGroup;
+			children = (
+				A609BEC123FC6BE90090B408 /* GiphyListTests.swift */,
+				A609BEC323FC6BE90090B408 /* Info.plist */,
+			);
+			path = GiphyListTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,6 +338,24 @@
 			productReference = A609BE5123F768160090B408 /* Giphy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A609BEBE23FC6BE90090B408 /* GiphyListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A609BEC623FC6BE90090B408 /* Build configuration list for PBXNativeTarget "GiphyListTests" */;
+			buildPhases = (
+				A609BEBB23FC6BE90090B408 /* Sources */,
+				A609BEBC23FC6BE90090B408 /* Frameworks */,
+				A609BEBD23FC6BE90090B408 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A609BEC523FC6BE90090B408 /* PBXTargetDependency */,
+			);
+			name = GiphyListTests;
+			productName = GiphyListTests;
+			productReference = A609BEBF23FC6BE90090B408 /* GiphyListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -315,6 +368,10 @@
 				TargetAttributes = {
 					A609BE5023F768160090B408 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					A609BEBE23FC6BE90090B408 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = A609BE5023F768160090B408;
 					};
 				};
 			};
@@ -332,6 +389,7 @@
 			projectRoot = "";
 			targets = (
 				A609BE5023F768160090B408 /* Giphy */,
+				A609BEBE23FC6BE90090B408 /* GiphyListTests */,
 			);
 		};
 /* End PBXProject section */
@@ -347,6 +405,13 @@
 				A609BE6123F768180090B408 /* LaunchScreen.storyboard in Resources */,
 				A609BE5E23F768180090B408 /* Assets.xcassets in Resources */,
 				A609BE5C23F768160090B408 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A609BEBD23FC6BE90090B408 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +437,7 @@
 				A609BE9223F96EA70090B408 /* GiphyListSceneConfigurator.swift in Sources */,
 				A609BE7223F95B400090B408 /* ParameterEncoder.swift in Sources */,
 				A609BE8A23F9625E0090B408 /* User.swift in Sources */,
+				A609BEBA23FC677B0090B408 /* UIViewController+Alert.swift in Sources */,
 				A609BEAE23FADAD50090B408 /* GiphyDetailsSceneProtocols.swift in Sources */,
 				A609BE9623F974B80090B408 /* GiphyListSceneWorker.swift in Sources */,
 				A609BE7323F95B400090B408 /* URLParameteersEncoder.swift in Sources */,
@@ -392,7 +458,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A609BEBB23FC6BE90090B408 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A609BEC223FC6BE90090B408 /* GiphyListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A609BEC523FC6BE90090B408 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A609BE5023F768160090B408 /* Giphy */;
+			targetProxy = A609BEC423FC6BE90090B408 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A609BE5A23F768160090B408 /* Main.storyboard */ = {
@@ -564,6 +646,46 @@
 			};
 			name = Release;
 		};
+		A609BEC723FC6BE90090B408 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VW46WHVYZR;
+				INFOPLIST_FILE = GiphyListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AppLineup.GiphyListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giphy.app/Giphy";
+			};
+			name = Debug;
+		};
+		A609BEC823FC6BE90090B408 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VW46WHVYZR;
+				INFOPLIST_FILE = GiphyListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AppLineup.GiphyListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giphy.app/Giphy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,6 +703,15 @@
 			buildConfigurations = (
 				A609BE6623F768180090B408 /* Debug */,
 				A609BE6723F768180090B408 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A609BEC623FC6BE90090B408 /* Build configuration list for PBXNativeTarget "GiphyListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A609BEC723FC6BE90090B408 /* Debug */,
+				A609BEC823FC6BE90090B408 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

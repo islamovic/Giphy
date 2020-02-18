@@ -14,8 +14,6 @@ class GiphyListViewController: UIViewController {
     var dataStore: GiphyListSceneDataStore!
     var router: GiphyListSceneRouter!
 
-    var semaphore: DispatchSemaphore!
-
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -23,7 +21,6 @@ class GiphyListViewController: UIViewController {
 
         setup()
         request(offset: 25, limit: 20)
-        semaphore = DispatchSemaphore(value: 0)
     }
 }
 
@@ -38,10 +35,9 @@ extension GiphyListViewController: GiphyListSceneDisplayView {
     }
 
     func display(error: CustomError) {
-        print(error.localizedDescription)
+        showAlert(title: "Fetching Gifs", message: error.localizedDescription)
     }
 }
-
 
 extension GiphyListViewController: UICollectionViewDataSource {
 

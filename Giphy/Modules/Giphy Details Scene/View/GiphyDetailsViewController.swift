@@ -35,7 +35,7 @@ extension GiphyDetailsViewController: GiphyDetailsSceneDisplayView {
     }
 
     func display(error: CustomError) {
-
+        showAlert(title: "Fetching Gif", message: error.localizedDescription)
     }
 }
 

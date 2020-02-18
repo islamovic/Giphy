@@ -9,9 +9,10 @@
 import Foundation
 
 public enum NetworkError: String, Error {
-    case parametersNIL = "parameters were nil."
-    case encodingFailed = "parameters encoding failed."
-    case missingURL = "URL is nil."
+    case parametersNIL  = "Parameters were nil."
+    case missingPath    = "Path is missing."
+    case encodingFailed = "Parameters encoding failed."
+    case missingURL     = "URL is nil."
 }
 
 protocol ParametersEncoder {

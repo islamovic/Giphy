@@ -18,8 +18,8 @@ class GiphyDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        gifActivityIndicator.isHidden = false
-        updateUI()
+
+        setup()
     }
 }
 
@@ -41,7 +41,17 @@ extension GiphyDetailsViewController: GiphyDetailsSceneDisplayView {
 
 private extension GiphyDetailsViewController {
 
+    func setup() {
+        gifActivityIndicator.isHidden = false
+        updateUI()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
+    }
+
     func updateUI() {
         interactor.fetchGifImage(gifURL: self.dataStore.originalGif!.url)
+    }
+
+    @objc func doneTapped() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

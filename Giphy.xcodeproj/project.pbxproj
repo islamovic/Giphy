@@ -48,6 +48,7 @@
 		A609BEBA23FC677B0090B408 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB923FC677B0090B408 /* UIViewController+Alert.swift */; };
 		A609BEC223FC6BE90090B408 /* GiphyListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEC123FC6BE90090B408 /* GiphyListTests.swift */; };
 		A609BECA23FC8A9C0090B408 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEC923FC8A9C0090B408 /* RouterTests.swift */; };
+		A609BECD23FC9ACE0090B408 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BECC23FC9ACE0090B408 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		A609BEC123FC6BE90090B408 /* GiphyListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyListTests.swift; sourceTree = "<group>"; };
 		A609BEC323FC6BE90090B408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A609BEC923FC8A9C0090B408 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		A609BECC23FC9ACE0090B408 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		A609BE5323F768160090B408 /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
+				A609BECB23FC9AB80090B408 /* Constants */,
 				A609BEA023F9CDEC0090B408 /* Extentions */,
 				A609BE9723F979380090B408 /* Services */,
 				A609BE7823F95BB90090B408 /* Domain */,
@@ -321,6 +324,14 @@
 			path = GiphyListTests;
 			sourceTree = "<group>";
 		};
+		A609BECB23FC9AB80090B408 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A609BECC23FC9ACE0090B408 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A609BE7523F95B400090B408 /* Router.swift in Sources */,
+				A609BECD23FC9ACE0090B408 /* Constants.swift in Sources */,
 				A609BE9423F96EAF0090B408 /* GiphyListSceneRouter.swift in Sources */,
 				A609BEB823FC15920090B408 /* Page.swift in Sources */,
 				A609BE7123F95B400090B408 /* JSONParametersEncoder.swift in Sources */,

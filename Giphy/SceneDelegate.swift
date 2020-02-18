@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
 
             let router = Router.shared
-            router.baseURL = URL(string: "https://api.giphy.com/v1/gifs/")
+            router.baseURL = URL(string: Constants.Server.baseURL)
 
             let window = UIWindow(windowScene: windowScene)
             self.window = window

@@ -13,7 +13,7 @@ public class GifNetworkService {
     public func listTrendingPosts(offset: Int, limit: Int,
                                   completion: @escaping(Data?, Error?) -> Void) {
         let path = "trending"
-        let parameters = ["api_key": "1L9rTdIySwunODKuMPXO26SyDkyjm6Cj",
+        let parameters = ["api_key": Constants.Server.APIKey,
                           "limit": "\(limit)",
                           "offset": "\(offset)",
                           "rating": "pg"]

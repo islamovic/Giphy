@@ -44,6 +44,7 @@
 		A609BEB023FADAE00090B408 /* GiphyDetailsSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEAF23FADAE00090B408 /* GiphyDetailsSceneInteractor.swift */; };
 		A609BEB223FADAF00090B408 /* GiphyDetailsScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB123FADAF00090B408 /* GiphyDetailsScenePresenter.swift */; };
 		A609BEB623FADB050090B408 /* GiphyDetailsSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB523FADB050090B408 /* GiphyDetailsSceneConfigurator.swift */; };
+		A609BEB823FC15920090B408 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB723FC15920090B408 /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		A609BEAF23FADAE00090B408 /* GiphyDetailsSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsSceneInteractor.swift; sourceTree = "<group>"; };
 		A609BEB123FADAF00090B408 /* GiphyDetailsScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsScenePresenter.swift; sourceTree = "<group>"; };
 		A609BEB523FADB050090B408 /* GiphyDetailsSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsSceneConfigurator.swift; sourceTree = "<group>"; };
+		A609BEB723FC15920090B408 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				A609BE8523F95E770090B408 /* Gif.swift */,
 				A609BE8723F960CA0090B408 /* GifImages.swift */,
 				A609BE8923F9625E0090B408 /* User.swift */,
+				A609BEB723FC15920090B408 /* Page.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			files = (
 				A609BE7523F95B400090B408 /* Router.swift in Sources */,
 				A609BE9423F96EAF0090B408 /* GiphyListSceneRouter.swift in Sources */,
+				A609BEB823FC15920090B408 /* Page.swift in Sources */,
 				A609BE7123F95B400090B408 /* JSONParametersEncoder.swift in Sources */,
 				A609BE5923F768160090B408 /* ViewController.swift in Sources */,
 				A609BE7623F95B400090B408 /* EndPoint.swift in Sources */,

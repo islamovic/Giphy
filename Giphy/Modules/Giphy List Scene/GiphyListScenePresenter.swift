@@ -21,8 +21,8 @@ extension GiphyListScenePresenter {
 
     func presentFetchedTrendingPosts(_ response: GiphyListScene.Fetch.Response) {
         switch response {
-            case .success(let gifs):
-                let viewModel = GiphyListScene.ViewModel(trendingPosts: gifs)
+            case .success(let result):
+                let viewModel = GiphyListScene.ViewModel(result: result)
                 displayView?.display(viewModel: viewModel)
             case .error(let error):
                 displayView?.display(error: error)

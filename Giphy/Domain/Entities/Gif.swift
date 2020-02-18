@@ -10,9 +10,11 @@ import Foundation
 
 struct Gifs: Codable {
     let gifs: [Gif]
+    let page: Page
 
     private enum CodingKeys: String, CodingKey {
         case gifs = "data"
+        case page = "pagination"
     }
 }
 

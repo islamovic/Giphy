@@ -12,20 +12,22 @@ class GiphyListSceneWorker {
 
     private let service = GifNetworkService()
 
-    func fetchTrendingPosts(_ completionHandler: @escaping([Gif], CustomError?) -> Void) {
+    func fetchTrendingPosts(offset: Int, limit: Int,
+                            _ completionHandler: @escaping(GiphyListScene.Output?, CustomError?) -> Void) {
 
-        service.listTrendingPosts { (data, error) in
+        service.listTrendingPosts(offset: offset, limit: limit) { (data, error) in
 
             if let data = data {
                 do {
                     let decoder = JSONDecoder()
                     let result = try decoder.decode(Gifs.self, from: data)
-                    completionHandler(result.gifs, nil)
+                    let output = GiphyListScene.Output(trendingPosts: result.gifs, pagination: result.page)
+                    completionHandler(output, nil)
                 } catch let error {
-                    completionHandler([], CustomError.custom(error.localizedDescription))
+                    completionHandler(nil, CustomError.custom(error.localizedDescription))
                 }
             } else if let error = error {
-                completionHandler([], CustomError.custom(error.localizedDescription))
+                completionHandler(nil, CustomError.custom(error.localizedDescription))
             }
         }
     }

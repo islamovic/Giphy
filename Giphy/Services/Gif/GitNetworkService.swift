@@ -10,11 +10,12 @@ import Foundation
 
 public class GifNetworkService {
 
-    public func listTrendingPosts(completion: @escaping(Data?, Error?) -> Void) {
+    public func listTrendingPosts(offset: Int, limit: Int,
+                                  completion: @escaping(Data?, Error?) -> Void) {
         let path = "trending"
         let parameters = ["api_key": "1L9rTdIySwunODKuMPXO26SyDkyjm6Cj",
-                          "limit": "20",
-                          "offset": "25",
+                          "limit": "\(limit)",
+                          "offset": "\(offset)",
                           "rating": "pg"]
         let trendingPostsEndPoint = EndPoint(path: path, parameters: parameters, method: .get)
 

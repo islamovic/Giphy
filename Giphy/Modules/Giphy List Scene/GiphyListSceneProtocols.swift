@@ -16,7 +16,7 @@ protocol GiphyListSceneDisplayView: class {
 
 // MARK: - Interactor
 protocol GiphyListSceneBusinessLogic: class {
-    func fetchTrendingPosts()
+    func fetchTrendingPosts(offset: Int, limit: Int)
 }
 
 // MARK: - Presenter
@@ -35,13 +35,19 @@ protocol GiphyListSceneRoutingLogic: class {
 // MARK: - Data Store
 protocol GiphyListSceneDataStore: class {
     var treendingPosts: [Gif] { get set }
+    var pagination: Page? { get set }
     var cachedGifs: [String: UIImage?] { get set }
 }
 
 // MARK: - Scene Model
 enum GiphyListScene {
     struct ViewModel {
-        var trendingPosts: [Gif]
+        var result: Output
+    }
+
+    struct Output {
+        let trendingPosts: [Gif]
+        let pagination: Page
     }
 }
 
@@ -50,5 +56,5 @@ extension GiphyListScene {
 }
 
 extension GiphyListScene.Fetch {
-    typealias Response = Result<[Gif], CustomError>
+    typealias Response = Result<GiphyListScene.Output, CustomError>
 }

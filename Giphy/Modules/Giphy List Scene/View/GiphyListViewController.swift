@@ -14,20 +14,24 @@ class GiphyListViewController: UIViewController {
     var dataStore: GiphyListSceneDataStore!
     var router: GiphyListSceneRouter!
 
+    var semaphore: DispatchSemaphore!
+
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
-        interactor.fetchTrendingPosts()
+        request(offset: 25, limit: 20)
+        semaphore = DispatchSemaphore(value: 0)
     }
 }
 
 extension GiphyListViewController: GiphyListSceneDisplayView {
 
     func display(viewModel: GiphyListScene.ViewModel) {
-        dataStore.treendingPosts = viewModel.trendingPosts
+        dataStore.treendingPosts.append(contentsOf: viewModel.result.trendingPosts)
+        dataStore.pagination = viewModel.result.pagination
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
@@ -55,7 +59,9 @@ extension GiphyListViewController: UICollectionViewDataSource {
         } else {
             cell.gifActivityIndicator.isHidden = false
             interactor.fetchGifImage(gif: trendGif) { [weak self] (gifImages) in
+
                 self?.dataStore.cachedGifs[trendGif.id] = gifImages
+
                 DispatchQueue.main.async {
                     cell.gifImageView.image = gifImages
                     cell.gifActivityIndicator.isHidden = true
@@ -82,8 +88,16 @@ extension GiphyListViewController: UICollectionViewDelegateFlowLayout {
         let cellSize = (width / 2) - 20
         return CGSize(width: cellSize, height: cellSize)
     }
-}
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        // pre fetch before the end
+        if indexPath.row == dataStore.treendingPosts.count - 6 {
+            request(offset: dataStore.pagination!.offset + dataStore.pagination!.count,
+                    limit: dataStore.pagination!.count)
+        }
+    }
+}
 
 private extension GiphyListViewController {
 
@@ -96,5 +110,9 @@ private extension GiphyListViewController {
         collectionView.register(GifCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+
+    func request(offset: Int, limit: Int) {
+        interactor.fetchTrendingPosts(offset: offset, limit: limit)
     }
 }

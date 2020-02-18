@@ -9,8 +9,8 @@
 import Foundation
 
 struct Images: Codable {
-    let original: OriginalImages?
-    let preview: Preview?
+    let original: OriginalImages
+    let preview: Preview
 
     private enum CodingKeys: String, CodingKey {
         case original = "original"
@@ -46,8 +46,8 @@ struct OriginalImages: Codable {
 }
 
 struct Preview: Codable {
-    let url: String
-    let height: String
-    let width: String
-    let size: String
+    let url: String?
+    let height: String?
+    let width: String?
+    let size: String?
 }

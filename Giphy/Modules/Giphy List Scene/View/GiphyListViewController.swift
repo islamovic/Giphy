@@ -64,6 +64,13 @@ extension GiphyListViewController: UICollectionViewDataSource {
     }
 }
 
+extension GiphyListViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        router.routeToInfoScene(with: dataStore.treendingPosts[indexPath.row])
+    }
+}
+
 extension GiphyListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,

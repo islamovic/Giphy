@@ -21,6 +21,10 @@ class GiphyListSceneRouter: GiphyListSceneRoutingLogic {
 
 extension GiphyListSceneRouter {
     func routeToInfoScene(with gif: Gif) {
+        let viewController = GiphyDetailsSceneConfigurator.configure()
+        viewController.dataStore.originalGif = gif.images.original
+        self.viewController?.present(viewController, animated: true, completion: nil)
+
 
     }
 }

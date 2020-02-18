@@ -38,6 +38,12 @@
 		A609BEA223F9CE1A0090B408 /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEA123F9CE1A0090B408 /* UICollectionView+Utils.swift */; };
 		A609BEA423F9E45D0090B408 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEA323F9E45D0090B408 /* UIImage+Gif.swift */; };
 		A609BEA623F9E47C0090B408 /* UIImageView+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEA523F9E47C0090B408 /* UIImageView+Gif.swift */; };
+		A609BEAB23FADAB50090B408 /* GiphyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEA923FADAB50090B408 /* GiphyDetailsViewController.swift */; };
+		A609BEAC23FADAB50090B408 /* GiphyDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A609BEAA23FADAB50090B408 /* GiphyDetailsViewController.xib */; };
+		A609BEAE23FADAD50090B408 /* GiphyDetailsSceneProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEAD23FADAD50090B408 /* GiphyDetailsSceneProtocols.swift */; };
+		A609BEB023FADAE00090B408 /* GiphyDetailsSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEAF23FADAE00090B408 /* GiphyDetailsSceneInteractor.swift */; };
+		A609BEB223FADAF00090B408 /* GiphyDetailsScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB123FADAF00090B408 /* GiphyDetailsScenePresenter.swift */; };
+		A609BEB623FADB050090B408 /* GiphyDetailsSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609BEB523FADB050090B408 /* GiphyDetailsSceneConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +80,12 @@
 		A609BEA123F9CE1A0090B408 /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
 		A609BEA323F9E45D0090B408 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		A609BEA523F9E47C0090B408 /* UIImageView+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Gif.swift"; sourceTree = "<group>"; };
+		A609BEA923FADAB50090B408 /* GiphyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsViewController.swift; sourceTree = "<group>"; };
+		A609BEAA23FADAB50090B408 /* GiphyDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiphyDetailsViewController.xib; sourceTree = "<group>"; };
+		A609BEAD23FADAD50090B408 /* GiphyDetailsSceneProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsSceneProtocols.swift; sourceTree = "<group>"; };
+		A609BEAF23FADAE00090B408 /* GiphyDetailsSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsSceneInteractor.swift; sourceTree = "<group>"; };
+		A609BEB123FADAF00090B408 /* GiphyDetailsScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsScenePresenter.swift; sourceTree = "<group>"; };
+		A609BEB523FADB050090B408 /* GiphyDetailsSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailsSceneConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +166,7 @@
 		A609BE7723F95BB10090B408 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A609BEA723FADA950090B408 /* Giphy Details Scene */,
 				A609BE7923F95BE60090B408 /* Giphy List Scene */,
 			);
 			path = Modules;
@@ -246,6 +259,27 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		A609BEA723FADA950090B408 /* Giphy Details Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A609BEA823FADAA00090B408 /* View */,
+				A609BEAD23FADAD50090B408 /* GiphyDetailsSceneProtocols.swift */,
+				A609BEAF23FADAE00090B408 /* GiphyDetailsSceneInteractor.swift */,
+				A609BEB123FADAF00090B408 /* GiphyDetailsScenePresenter.swift */,
+				A609BEB523FADB050090B408 /* GiphyDetailsSceneConfigurator.swift */,
+			);
+			path = "Giphy Details Scene";
+			sourceTree = "<group>";
+		};
+		A609BEA823FADAA00090B408 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A609BEA923FADAB50090B408 /* GiphyDetailsViewController.swift */,
+				A609BEAA23FADAB50090B408 /* GiphyDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -305,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A609BE9F23F9BB710090B408 /* GifCell.xib in Resources */,
+				A609BEAC23FADAB50090B408 /* GiphyDetailsViewController.xib in Resources */,
 				A609BE7E23F95C160090B408 /* GiphyListViewController.xib in Resources */,
 				A609BE6123F768180090B408 /* LaunchScreen.storyboard in Resources */,
 				A609BE5E23F768180090B408 /* Assets.xcassets in Resources */,
@@ -326,25 +361,30 @@
 				A609BE7623F95B400090B408 /* EndPoint.swift in Sources */,
 				A609BE7D23F95C160090B408 /* GiphyListViewController.swift in Sources */,
 				A609BE9E23F9BB710090B408 /* GifCell.swift in Sources */,
+				A609BEAB23FADAB50090B408 /* GiphyDetailsViewController.swift in Sources */,
 				A609BE8323F95D130090B408 /* CustomError.swift in Sources */,
 				A609BE8C23F96D030090B408 /* Result.swift in Sources */,
 				A609BE5523F768160090B408 /* AppDelegate.swift in Sources */,
 				A609BE9223F96EA70090B408 /* GiphyListSceneConfigurator.swift in Sources */,
 				A609BE7223F95B400090B408 /* ParameterEncoder.swift in Sources */,
 				A609BE8A23F9625E0090B408 /* User.swift in Sources */,
+				A609BEAE23FADAD50090B408 /* GiphyDetailsSceneProtocols.swift in Sources */,
 				A609BE9623F974B80090B408 /* GiphyListSceneWorker.swift in Sources */,
 				A609BE7323F95B400090B408 /* URLParameteersEncoder.swift in Sources */,
 				A609BE8623F95E770090B408 /* Gif.swift in Sources */,
 				A609BEA223F9CE1A0090B408 /* UICollectionView+Utils.swift in Sources */,
 				A609BEA623F9E47C0090B408 /* UIImageView+Gif.swift in Sources */,
 				A609BE8023F95C320090B408 /* GiphyListSceneProtocols.swift in Sources */,
+				A609BEB623FADB050090B408 /* GiphyDetailsSceneConfigurator.swift in Sources */,
 				A609BE5723F768160090B408 /* SceneDelegate.swift in Sources */,
+				A609BEB223FADAF00090B408 /* GiphyDetailsScenePresenter.swift in Sources */,
 				A609BE8823F960CA0090B408 /* GifImages.swift in Sources */,
 				A609BE8E23F96E920090B408 /* GiphyListSceneInteractor.swift in Sources */,
 				A609BE7423F95B400090B408 /* NetworkRouter.swift in Sources */,
 				A609BE9023F96E9A0090B408 /* GiphyListScenePresenter.swift in Sources */,
 				A609BEA423F9E45D0090B408 /* UIImage+Gif.swift in Sources */,
 				A609BE9A23F979630090B408 /* GitNetworkService.swift in Sources */,
+				A609BEB023FADAE00090B408 /* GiphyDetailsSceneInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,11 @@ struct Images: Codable {
     let original: OriginalImages
     let preview: Preview
 
+    init(original: OriginalImages, preview: Preview) {
+        self.original = original
+        self.preview = preview
+    }
+
     private enum CodingKeys: String, CodingKey {
         case original = "original"
         case preview = "preview_gif"
@@ -31,7 +36,20 @@ struct OriginalImages: Codable {
     let webp: String
     let webpSize: String
 
-    enum CodingKeys: String, CodingKey {
+    init(url: String) {
+        self.url = url
+        self.frames = ""
+        self.hash = ""
+        self.height = ""
+        self.width = ""
+        self.size = ""
+        self.mp4Size = ""
+        self.mp4 = ""
+        self.webp = ""
+        self.webpSize = ""
+    }
+
+    private enum CodingKeys: String, CodingKey {
         case frames
         case hash
         case height
@@ -50,4 +68,11 @@ struct Preview: Codable {
     let height: String?
     let width: String?
     let size: String?
+
+    init(url: String?) {
+        self.url = url
+        self.height = nil
+        self.width = nil
+        self.size = nil
+    }
 }

@@ -29,4 +29,17 @@ struct Gif: Codable {
     let rating: String
     let images: Images
     let user: User?
+
+    init(id: String, title: String, originalUrl: String, previewUrl: String?) {
+        self.id = id
+        self.title = title
+        self.type = ""
+        self.url = ""
+        self.slug = ""
+        self.username = ""
+        self.rating = ""
+        self.images = Images(original: OriginalImages(url: originalUrl),
+                             preview: Preview(url: previewUrl))
+        self.user = nil
+    }
 }

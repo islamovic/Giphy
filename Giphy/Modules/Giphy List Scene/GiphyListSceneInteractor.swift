@@ -40,4 +40,11 @@ extension GiphyListSceneInteractor {
             }
         }
     }
+
+    func fetchGifImage(gif: Gif, completion: @escaping (UIImage?) -> Void) {
+        DispatchQueue.global().async {
+            let image = UIImage.gif(url: gif.images.preview!.url)
+            completion(image)
+        }
+    }
 }

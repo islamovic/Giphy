@@ -19,17 +19,23 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bzu-ph-c1Y">
                         <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="vuP-Bp-gux">
+                        <rect key="frame" x="82.5" y="82.5" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="bzu-ph-c1Y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2zz-82-tFI"/>
                 <constraint firstAttribute="trailing" secondItem="bzu-ph-c1Y" secondAttribute="trailing" id="55l-TI-OjL"/>
                 <constraint firstItem="bzu-ph-c1Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Gzl-d5-azG"/>
+                <constraint firstItem="vuP-Bp-gux" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="J5N-lp-SrK"/>
                 <constraint firstAttribute="bottom" secondItem="bzu-ph-c1Y" secondAttribute="bottom" id="Kdr-Zh-mbh"/>
+                <constraint firstItem="vuP-Bp-gux" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ngW-gZ-bmb"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="185" height="185"/>
             <connections>
+                <outlet property="gifActivityIndicator" destination="vuP-Bp-gux" id="Zsi-lL-dSY"/>
                 <outlet property="gifImageView" destination="bzu-ph-c1Y" id="YWL-gr-UjZ"/>
             </connections>
             <point key="canvasLocation" x="235.50724637681162" y="193.86160714285714"/>

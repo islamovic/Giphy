@@ -46,16 +46,19 @@ extension GiphyListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let cell: GifCell = collectionView.dequeReusableCell(indexPath: indexPath)
         let trendGif = dataStore.treendingPosts[indexPath.row]
 
         if dataStore.cachedGifs[trendGif.id] != nil {
             cell.gifImageView.image = dataStore.cachedGifs[trendGif.id]!
         } else {
-            cell.configure(gif: trendGif) { [weak self] (gifImages) in
+            cell.gifActivityIndicator.isHidden = false
+            interactor.fetchGifImage(gif: trendGif) { [weak self] (gifImages) in
                 self?.dataStore.cachedGifs[trendGif.id] = gifImages
                 DispatchQueue.main.async {
                     cell.gifImageView.image = gifImages
+                    cell.gifActivityIndicator.isHidden = true
                 }
             }
         }

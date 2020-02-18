@@ -26,7 +26,12 @@ class GiphyDetailsViewController: UIViewController {
 extension GiphyDetailsViewController: GiphyDetailsSceneDisplayView {
 
     func display(viewModel: GiphyDetailsScene.ViewModel) {
-        dataStore.originalGif = viewModel.originalGif
+
+        dataStore.gifImage = viewModel.gif
+        DispatchQueue.main.async { [weak self] in
+            self?.gifActivityIndicator.isHidden = true
+            self?.originalImageView.image = self?.dataStore.gifImage
+        }
     }
 
     func display(error: CustomError) {
@@ -37,13 +42,6 @@ extension GiphyDetailsViewController: GiphyDetailsSceneDisplayView {
 private extension GiphyDetailsViewController {
 
     func updateUI() {
-        DispatchQueue.global().async { [weak self] in
-            let url = (self?.dataStore.originalGif!.url)!
-            let gifImage = UIImage.gif(url: url)
-            DispatchQueue.main.async {
-                self?.gifActivityIndicator.isHidden = true
-                self?.originalImageView.image = gifImage
-            }
-        }
+        interactor.fetchGifImage(gifURL: self.dataStore.originalGif!.url)
     }
 }

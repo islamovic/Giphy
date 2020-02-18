@@ -16,3 +16,17 @@ class GiphyDetailsScenePresenter: GiphyDetailsScenePresentingLogic {
         self.displayView = displayView
     }
 }
+
+extension GiphyDetailsScenePresenter {
+
+    func presentDownloadedGif(_ response: GiphyDetailsScene.Fetch.Response) {
+
+        switch response {
+            case .success(let gifImage):
+                let viewModel = GiphyDetailsScene.ViewModel(gif: gifImage)
+                displayView?.display(viewModel: viewModel)
+            case .error(let error):
+                displayView?.display(error: error)
+        }
+    }
+}

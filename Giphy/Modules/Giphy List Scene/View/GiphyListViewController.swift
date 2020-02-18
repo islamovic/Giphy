@@ -30,9 +30,9 @@ class GiphyListViewController: UIViewController {
 extension GiphyListViewController: GiphyListSceneDisplayView {
 
     func display(viewModel: GiphyListScene.ViewModel) {
-        dataStore.treendingPosts.append(contentsOf: viewModel.result.trendingPosts)
-        dataStore.pagination = viewModel.result.pagination
         DispatchQueue.main.async { [weak self] in
+            self?.dataStore.treendingPosts.append(contentsOf: viewModel.result.trendingPosts)
+            self?.dataStore.pagination = viewModel.result.pagination
             self?.collectionView.reloadData()
         }
     }
@@ -58,11 +58,10 @@ extension GiphyListViewController: UICollectionViewDataSource {
             cell.gifImageView.image = dataStore.cachedGifs[trendGif.id]!
         } else {
             cell.gifActivityIndicator.isHidden = false
-            interactor.fetchGifImage(gif: trendGif) { [weak self] (gifImages) in
+            interactor.fetchGifImage(gif: trendGif) { (gifImages) in
 
-                self?.dataStore.cachedGifs[trendGif.id] = gifImages
-
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    self?.dataStore.cachedGifs[trendGif.id] = gifImages
                     cell.gifImageView.image = gifImages
                     cell.gifActivityIndicator.isHidden = true
                 }

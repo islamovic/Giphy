@@ -6,7 +6,7 @@
 //  Copyright © 2020 App Lineup. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol GiphyDetailsSceneDisplayView: class {
     func display(viewModel: GiphyDetailsScene.ViewModel)
@@ -14,19 +14,28 @@ protocol GiphyDetailsSceneDisplayView: class {
 }
 
 protocol GiphyDetailsSceneBusinessLogic: class {
-
+    func fetchGifImage(gifURL: String)
 }
 
 protocol GiphyDetailsScenePresentingLogic: class {
-
+    func presentDownloadedGif(_ response: GiphyDetailsScene.Fetch.Response)
 }
 
 protocol GiphyDetailsSceneDataStore: class {
     var originalGif: OriginalImages? { get set }
+    var gifImage: UIImage? { get set }
 }
 
 enum GiphyDetailsScene {
     struct ViewModel {
-        var originalGif: OriginalImages
+        var gif: UIImage?
     }
+}
+
+extension GiphyDetailsScene {
+    enum Fetch { }
+}
+
+extension GiphyDetailsScene.Fetch {
+    typealias Response = Result<UIImage?, CustomError>
 }
